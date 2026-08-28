@@ -1,3 +1,7 @@
+import pandas as pd
+import streamlit as st
+import json
+from pathlib import Path
 import streamlit as st
 from PIL import Image
 
@@ -28,6 +32,8 @@ if "animals" not in st.session_state:
     st.session_state.animals = df.copy()
 
 animals = st.session_state.animals
+# Zotlar ro'yxati (animals.json dan avtomatik)
+breeds = animals['breed'].unique().tolist()
 
 st.markdown("""
 <style>
