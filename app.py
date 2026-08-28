@@ -1,4 +1,12 @@
+import streamlit as st
+from PIL import Image
 
+# Rasmni yuklash
+image = Image.open('logo.jpg')
+st.image(image, use_container_width=True)
+
+st.title("KELAJAK NASLI — BUGUNDAN BOSHLANADI")
+st.write("AgroGen-AI loyihasiga xush kelibsiz!")
 import json
 from pathlib import Path
 from datetime import date
