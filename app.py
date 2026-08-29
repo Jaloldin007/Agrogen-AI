@@ -229,10 +229,10 @@ elif page == "Hayvon pasporti":
     selected = st.selectbox("Hayvonni tanlang", animals["id"].tolist())
 a = animals[animals["id"] == selected].iloc[0]
 c1, c2, c3, c4 = st.columns(4)
-    c1.metric("ID", a["id"])
-    c2.metric("Zot", a["breed"])
-    c3.metric("Vazn", f'{a["weight"]} kg')
-    c4.metric("Sut", f'{a["milk"]} L/kun')
+c1.metric("ID", a["id"])
+c2.metric("Zot", a["breed"])
+c3.metric("Vazn", f'{a["weight"]} kg')
+c4.metric("Sut", f'{a["milk"]} L/kun')
 
     st.divider()
     left, right = st.columns(2)
