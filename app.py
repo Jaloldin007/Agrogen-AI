@@ -235,7 +235,7 @@ c3.metric("Vazn", f'{a["weight"]} kg')
 c4.metric("Sut", f'{a["milk"]} L/kun')
 
 st.divider()
-    left, right = st.columns(2)
+left, right = st.columns(2)
     with left:
         st.write("Asosiy maʼlumotlar")
         st.write(f"Jinsi: {a['sex']}")
