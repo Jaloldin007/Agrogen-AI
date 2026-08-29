@@ -305,6 +305,41 @@ with st.form("add_animal"):
             st.success(f"✅ {new_id} muvaffaqiyatli qoʻshildi!")
             st.rerun()
 
+# ======================== YANGI HAYVON QO'SHISH ========================
+    st.divider()
+    st.subheader("➕ Yangi hayvon qoʻshish")
+    with st.form("add_animal"):
+        c1, c2, c3 = st.columns(3)
+        new_id = c1.text_input("ID", value=f"UZ-{len(animals)+1:04d}")
+        new_breed = c2.selectbox("Zot", breeds)
+        new_sex = c3.selectbox("Jins", ["Urgʻochi", "Erkak"])
+
+        c4, c5, c6 = st.columns(3)
+        new_age = c4.number_input("Yosh", 0, 20, 2)
+        new_weight = c5.number_input("Vazn (kg)", 0, 1500, 450)
+        new_milk = c6.number_input("Sut (L/kun)", 0.0, 100.0, 25.0)
+
+        submitted = st.form_submit_button("➕ Hayvonni qoʻshish")
+        if submitted:
+            row = {
+                "id": new_id,
+                "name": f"Yangi hayvon",
+                "breed": new_breed,
+                "sex": new_sex,
+                "age": new_age,
+                "weight": new_weight,
+                "milk": new_milk if new_sex == "Urgʻochi" else 0,
+                "father": "Nomaʼlum",
+                "mother": "Nomaʼlum",
+                "vaccination": str(date.today()),
+                "breeding_status": "Kuzatuvda",
+                "health_status": "Sogʻlom",
+                "pregnancy": "Yoʻq"
+            }
+            st.session_state.animals = pd.concat([animals, pd.DataFrame([row])], ignore_index=True)
+            st.success(f"✅ {new_id} muvaffaqiyatli qoʻshildi!")
+            st.rerun()
+
 # ======================== HAYVON PASPORTI ========================
 elif page == "Hayvon pasporti":
     st.subheader("🪪 Raqamli hayvon pasporti")
