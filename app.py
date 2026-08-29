@@ -211,3 +211,45 @@ elif page == "AI Assistant":
 
 st.divider()
 st.caption("AgroGen AI MVP • Demo ma’lumotlari real ferma o‘lchovlari emas. AI moduli hozircha decision-support prototipidir.")
+st.divider()
+st.subheader("🧠 AgroGen AI qanday ishlaydi?")
+
+col1, col2 = st.columns([1, 2])
+
+with col1:
+    st.markdown("""
+    ```
+    🐄 HAYVON
+        │
+        ▼
+    📋 MA'LUMOTLAR
+        │
+        ▼
+    🗄️ RAQAMLI BAZA
+        │
+        ▼
+    📊 TAHLIL
+        │
+        ▼
+    🧠 AI MODEL
+        │
+        ▼
+    💡 TAVSIYA / SIGNAL
+        │
+        ▼
+    👨‍🌾 FERMER
+    ```
+    """)
+
+with col2:
+    st.markdown("""
+    **1. 🐄 HAYVON** – Har bir hayvon tizimga kiritiladi.  
+    **2. 📋 MA'LUMOTLAR** – Zoti, yoshi, vazni, sog'lig'i yoziladi.  
+    **3. 🗄️ RAQAMLI BAZA** – Barcha ma'lumotlar xavfsiz saqlanadi.  
+    **4. 📊 TAHLIL** – AI va statistika modellari tahlil qiladi.  
+    **5. 🧠 AI MODEL** – Mahsuldorlik va naslchilik potentsiali baholanadi.  
+    **6. 💡 TAVSIYA / SIGNAL** – Fermerga tavsiyalar yoki xavf signali beriladi.  
+    **7. 👨‍🌾 FERMER** – Fermer qaror qabul qiladi va amalga oshiradi.
+    """)
+
+st.caption("Kelajak nasli — bugundan boshlanadi. © AgroGen AI")
