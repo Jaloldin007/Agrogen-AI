@@ -437,9 +437,8 @@ with col2:
 
 # ======================== FAQ ========================
 st.divider()
-with 
-st.expander("❓ Tez-tez beriladigan savollar"):
-st.markdown("""
+with st.expander("❓ Tez-tez beriladigan savollar"):
+    st.markdown("""
 1. AgroGen AI qanday ishlaydi? 
 → Hayvon ma'lumotlarini kiritasiz, tizim ularni tahlil qiladi va tavsiyalar beradi.
 
