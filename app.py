@@ -5,7 +5,6 @@ from pathlib import Path
 from PIL import Image
 import plotly.express as px
 from datetime import date
-import io
 import numpy as np
 
 st.set_page_config(
@@ -71,6 +70,14 @@ st.markdown("""
         border-top: 1px solid rgba(37, 69, 54, 0.3);
         margin-top: 2rem;
     }
+    .section-desc {
+        color: #b8cfc3;
+        background: rgba(13, 28, 21, 0.4);
+        padding: 1rem 1.5rem;
+        border-radius: 12px;
+        border-left: 3px solid #4ecdc4;
+        margin-bottom: 1.5rem;
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -117,10 +124,19 @@ lang = st.sidebar.selectbox("🌐 Til / Language", ["O'zbek", "Русский", 
 st.sidebar.divider()
 st.sidebar.info("MVP: 100 ta demo hayvon. Keyingi bosqichda real ferma maʼlumotlari va ML modeli ulanadi.")
 
+# ======================== DASHBOARD ========================
 if page == "Dashboard":
+    st.markdown("""
+    <div class="section-desc">
+        📊 <b>Dashboard</b> — ferma faoliyatining asosiy ko'rsatkichlari: hayvonlar soni, o'rtacha sut va vazn, 
+        zotlar bo'yicha taqsimot va eng mahsuldor hayvonlar reytingi.
+    </div>
+    """, unsafe_allow_html=True)
+
     females = animals[animals["sex"] == "Urgʻochi"]
     avg_milk = females["milk"].mean() if not females.empty else 0
     avg_weight = animals["weight"].mean() if not animals.empty else 0
+    high = len(females[females["milk"] >= 30])
 
     cols = st.columns(4)
     kpi_data = [
@@ -154,13 +170,20 @@ if page == "Dashboard":
             st.plotly_chart(fig, use_container_width=True)
 
     st.subheader("🏆 Eng mahsuldor hayvonlar")
+    st.markdown("*Sut mahsuldorligi bo'yicha eng yaxshi 10 ta hayvon*")
     top = females.sort_values("milk", ascending=False).head(10) if not females.empty else pd.DataFrame()
     if not top.empty:
         st.dataframe(top[["id", "breed", "age", "weight", "milk", "breeding_status"]],
                      use_container_width=True, hide_index=True)
 
+# ======================== HAYVONLAR ========================
 elif page == "Hayvonlar":
-    st.subheader("🐄 Hayvonlar bazasi")
+    st.markdown("""
+    <div class="section-desc">
+        🐄 <b>Hayvonlar bazasi</b> — barcha hayvonlar haqidagi ma'lumotlar: ID, zoti, jinsi, yoshi, vazni, 
+        sut mahsuldorligi va nasl ma'lumotlari. Qidiruv, filtr va CSV yuklab olish imkoniyatlari mavjud.
+    </div>
+    """, unsafe_allow_html=True)
 
     col1, col2, col3 = st.columns(3)
     with col1:
@@ -192,6 +215,7 @@ elif page == "Hayvonlar":
 
     st.divider()
     st.subheader("➕ Yangi hayvon qoʻshish")
+    st.markdown("*Yangi hayvon ma'lumotlarini kiritib, bazaga qo'shing*")
     with st.form("add_animal"):
         c1, c2, c3 = st.columns(3)
         new_id = c1.text_input("ID", value=f"UZ-{len(animals)+1:04d}")
@@ -202,7 +226,6 @@ elif page == "Hayvonlar":
         new_age = c4.number_input("Yosh", 0, 20, 2)
         new_weight = c5.number_input("Vazn (kg)", 0, 1500, 450)
         new_milk = c6.number_input("Sut (L/kun)", 0.0, 100.0, 25.0)
-
         submitted = st.form_submit_button("➕ Hayvonni qoʻshish")
         if submitted:
             row = {
@@ -224,8 +247,15 @@ elif page == "Hayvonlar":
             st.success(f"✅ {new_id} muvaffaqiyatli qoʻshildi!")
             st.rerun()
 
+# ======================== HAYVON PASPORTI ========================
 elif page == "Hayvon pasporti":
-    st.subheader("🪪 Raqamli hayvon pasporti")
+    st.markdown("""
+    <div class="section-desc">
+        🪪 <b>Raqamli hayvon pasporti</b> — har bir hayvonning to'liq ma'lumotlari: ID, zoti, jinsi, yoshi, 
+        vazni, sut mahsuldorligi, ota-ona ma'lumotlari, emlash va naslchilik holati.
+    </div>
+    """, unsafe_allow_html=True)
+
     selected = st.selectbox("Hayvonni tanlang", animals["id"].tolist())
     a = animals[animals["id"] == selected].iloc[0]
 
@@ -242,14 +272,25 @@ elif page == "Hayvon pasporti":
         st.write(f"Jinsi: {a['sex']}")
         st.write(f"Yoshi: {a['age']} yosh")
         st.write(f"Emlash: {a['vaccination']}")
+        st.write(f"Sog'liq holati: {a.get('health_status', 'Nomaʼlum')}")
     with right:
         st.write("Nasl maʼlumotlari")
         st.write(f"Ota: {a['father']}")
         st.write(f"Ona: {a['mother']}")
         st.write(f"Holati: {a['breeding_status']}")
+        st.write(f"Boʻgʻozlik: {a.get('pregnancy', 'Nomaʼlum')}")
 
+    st.info("📌 QR-kod moduli keyingi versiyada ulanadi.")
+
+# ======================== SUT & VAZN ========================
 elif page == "Sut & vazn":
-    st.subheader("🥛 Sut & ⚖️ vazn monitoringi")
+    st.markdown("""
+    <div class="section-desc">
+        🥛 <b>Sut & vazn monitoringi</b> — tanlangan hayvonning sut mahsuldorligi va vazn dinamikasini 
+        interaktiv grafiklar orqali kuzatish. 14 kunlik demo tarix asosida tahlil.
+    </div>
+    """, unsafe_allow_html=True)
+
     female_ids = animals[animals["sex"] == "Urgʻochi"]["id"].tolist()
     if not female_ids:
         st.warning("Urgʻochi hayvonlar mavjud emas.")
@@ -264,6 +305,8 @@ elif page == "Sut & vazn":
             "Sut (L)": [round(base + ((i % 5) - 2) * 0.7, 1) for i in range(14)],
             "Vazn (kg)": [int(a["weight"] - 5 + i * 0.4) for i in range(14)]
         }).set_index("Sana")
+
+        st.write(f"{a['id']} — {a['breed']} hayvoni uchun ma'lumotlar")
 
         c1, c2 = st.columns(2)
         with c1:
@@ -281,16 +324,18 @@ elif page == "Sut & vazn":
             fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
                               font=dict(color='#b8cfc3'))
             st.plotly_chart(fig, use_container_width=True)
-        with c2:
-            st.write("Vazn dinamikasi")
-            fig = px.line(demo_data, y='Vazn (kg)', title='Vazn dinamikasi',
-                          color_discrete_sequence=['#8cffc3'])
-            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
-                              font=dict(color='#b8cfc3'))
-            st.plotly_chart(fig, use_container_width=True)
 
+        st.caption("📌 Grafiklar MVP namoyishi uchun generatsiya qilingan demo tarixidir.")
+
+# ======================== NASLCHILIK AI ========================
 elif page == "Naslchilik AI":
-    st.subheader("🧬 Naslchilik AI — qarorlarni qoʻllab-quvvatlash")
+    st.markdown("""
+    <div class="section-desc">
+        🧬 <b>Naslchilik AI</b> — tanlangan sigir uchun eng mos naslchilik nomzodlarini aniqlash. 
+        Zot, mahsuldorlik, vazn va yosh asosida hisoblangan moslik skori.
+    </div>
+    """, unsafe_allow_html=True)
+
     females = animals[animals["sex"] == "Urgʻochi"]
     if females.empty:
         st.warning("Urgʻochi hayvonlar mavjud emas.")
@@ -299,6 +344,8 @@ elif page == "Naslchilik AI":
         cow = females[females["id"] == selected].iloc[0]
 
         st.markdown('<div class="ai-box">🤖 <b>AI demo tahlili</b><br>Quyidagi tavsiya zot, mahsuldorlik, vazn va nasl maʼlumotlari asosida qoidaviy model bilan hisoblanadi.</div>', unsafe_allow_html=True)
+
+        st.write(f"Tanlangan sigir: {cow['id']} — {cow['breed']}, sut: {cow['milk']} L/kun")
 
         candidates = animals[animals["sex"] == "Erkak"].copy()
         if candidates.empty:
@@ -314,9 +361,17 @@ elif page == "Naslchilik AI":
             st.success(f"✅ Tavsiya etilayotgan demo nomzod: {best['id']} — {best['breed']}, moslik skori: {best['score']:.0f}/100")
             st.dataframe(candidates[["id", "breed", "age", "weight", "score"]].head(5),
                          use_container_width=True, hide_index=True)
+            st.warning("⚠️ Bu veterinariya/genetik tashxis emas. Real mahsulotda naslchilik mutaxassisi va laboratoriya maʼlumotlari bilan validatsiya qilinadi.")
 
+# ======================== AI ASSISTANT ========================
 elif page == "AI Assistant":
-    st.subheader("🤖 AI Farm Assistant")
+    st.markdown("""
+    <div class="section-desc">
+        🤖 <b>AI Farm Assistant</b> — sun'iy intellekt yordamida ferma haqida savollarga javob olish. 
+        "Sut", "mahsuldor", "vazn" yoki "nasl" kalit so'zlari bilan so'rang.
+    </div>
+    """, unsafe_allow_html=True)
+
     question = st.text_area("Savolingizni yozing", placeholder="Masalan: Qaysi sigirlar eng mahsuldor?")
     if st.button("🔍 Tahlil qilish"):
         if not question.strip():
@@ -338,58 +393,113 @@ elif page == "AI Assistant":
             else:
                 st.info("📌 Demo AI: savolni “sut”, “mahsuldor”, “vazn” yoki “nasl” kalit soʻzlari bilan bering.")
 
+# ======================== AGROGEN AI QANDAY ISHLAYDI ========================
+st.divider()
+st.subheader("🧠 AgroGen AI qanday ishlaydi?")
+
+col1, col2 = st.columns([1, 2])
+with col1:
+st.markdown("""
+
+
+    🐄 HAYVON
+        │
+        ▼
+    📋 MA'LUMOTLAR
+        │
+        ▼
+    🗄️ RAQAMLI BAZA
+        │
+        ▼
+    📊 TAHLIL
+        │
+        ▼
+    🧠 AI MODEL
+        │
+        ▼
+    💡 TAVSIYA / SIGNAL
+        │
+        ▼
+    👨‍🌾 FERMER
+    
+ """)
+
+with col2:
+st.markdown("""
+1. 🐄 HAYVON – Har bir hayvon tizimga kiritiladi. 
+2. 📋 MA'LUMOTLAR – Zoti, yoshi, vazni, sog'lig'i yoziladi. 
+3. 🗄️ RAQAMLI BAZA – Barcha ma'lumotlar xavfsiz saqlanadi. 
+4. 📊 TAHLIL – AI va statistika modellari tahlil qiladi. 
+5. 🧠 AI MODEL – Mahsuldorlik va naslchilik potentsiali baholanadi. 
+6. 💡 TAVSIYA / SIGNAL – Fermerga tavsiyalar yoki xavf signali beriladi. 
+7. 👨‍🌾 FERMER – Fermer qaror qabul qiladi va amalga oshiradi.
+""")
+
+# ======================== FAQ ========================
 st.divider()
 with st.expander("❓ Tez-tez beriladigan savollar"):
-    st.markdown("""
-    1. AgroGen AI qanday ishlaydi?  
-    → Hayvon ma'lumotlarini kiritasiz, tizim ularni tahlil qiladi va tavsiyalar beradi.
+st.markdown("""
+1. AgroGen AI qanday ishlaydi? 
+→ Hayvon ma'lumotlarini kiritasiz, tizim ularni tahlil qiladi va tavsiyalar beradi.
 
-    2. Ma'lumotlar qayerda saqlanadi?  
-    → Hozircha JSON faylda, kelajakda PostgreSQL ulanishi rejalashtirilgan.
+2. Ma'lumotlar qayerda saqlanadi? 
+→ Hozircha JSON faylda, kelajakda PostgreSQL ulanishi rejalashtirilgan.
 
-    3. AI modeli qanday o'rgatilgan?  
-    → Hozircha qoidaviy tizim, kelajakda ML modeli o'rnatiladi.
-    """)
+3. AI modeli qanday o'rgatilgan? 
+→ Hozircha qoidaviy tizim, kelajakda ML modeli o'rnatiladi.
 
+4. Ilovani qanday ishga tushirish mumkin? 
+→ pip install -r requirements.txt va streamlit run app.py
+
+5. Ma'lumotlarni eksport qilsa bo'ladimi? 
+→ Ha, "Hayvonlar" bo'limida CSV yuklab olish mumkin.
+""")
+
+# ======================== SHARHLAR ========================
 st.subheader("⭐ Foydalanuvchi sharhlari")
 col1, col2 = st.columns(2)
 
 with col1:
-    st.markdown("""
-    <div class="testimonial">
-        <div class="name">🧑‍🌾 Alisher Xo'jayev</div>
-        <div>"AgroGen AI yordamida fermamdagi barcha hayvonlarni bir tizimda boshqarish imkoniga ega bo'ldim. Juda qulay!"</div>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-    </div>
-    """, unsafe_allow_html=True)
+st.markdown("""
+<div class="testimonial">
+<div class="name">🧑‍🌾 Alisher Xo'jayev</div>
+<div>"AgroGen AI yordamida fermamdagi barcha hayvonlarni bir tizimda boshqarish imkoniga ega bo'ldim. Juda qulay!"</div>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+""", unsafe_allow_html=True)
 
 with col2:
-    st.markdown("""
-    <div class="testimonial">
-        <div class="name">👩‍🌾 Dilorom Qodirova</div>
-        <div>"Naslchilik AI bo'limi menga eng yaxshi sigirlarni tanlashda yordam berdi. Mahsuldorlik 20% ga oshdi!"</div>
-        <div class="stars">⭐⭐⭐⭐⭐</div>
-    </div>
-    """, unsafe_allow_html=True)
+st.markdown("""
+<div class="testimonial">
+<div class="name">👩‍🌾 Dilorom Qodirova</div>
+<div>"Naslchilik AI bo'limi menga eng yaxshi sigirlarni tanlashda yordam berdi. Mahsuldorlik 20% ga oshdi!"</div>
+<div class="stars">⭐⭐⭐⭐⭐</div>
+</div>
+""", unsafe_allow_html=True)
 
+# ======================== QO'LLAB-QUVVATLASH ========================
 st.divider()
 st.subheader("☕ Qo'llab-quvvatlash")
 st.markdown("""
+Agar loyiham sizga foydali bo'lsa, quyidagi orqali qo'llab-quvvatlashingiz mumkin:
+
 - 💳 PayMe: +998 97 373 93 99
-- 🏦 Bank kartasi: 9860 6004 0506 3766  
+- 🏦 Bank kartasi: 9860 6004 0506 3766
 - 🌐 GitHub Sponsor: [github.com/sponsors/Jaloldin007](https://github.com/sponsors/Jaloldin007)
 """)
 
+# ======================== BIO ========================
 st.divider()
 st.subheader("👨‍💻 Muallif haqida")
 st.markdown("""
-Jaloldin007 — AgroGen AI asoschisi.  
+Jaloldin007 — AgroGen AI asoschisi. 
 Chorvachilik va sun'iy intellekt sohalarida faoliyat yuritadi.
 
-📧 Email: shahandtel265@gmail.com  
-🔗 GitHub: [github.com/Jaloldin007](https://github.com/Jaloldin007)  
+📧 Email: shahandtel265@gmail.com 
+🔗 GitHub: [github.com/Jaloldin007](https://github.com/Jaloldin007) 
 🌐 Loyiha: [AgroGen AI](https://agrogen-ai.streamlit.app)
 """)
 
+# ======================== FOOTER ========================
 st.divider()
 st.markdown('<div class="footer">🌱 Kelajak nasli — bugundan boshlanadi. | AgroGen AI MVP</div>', unsafe_allow_html=True)
