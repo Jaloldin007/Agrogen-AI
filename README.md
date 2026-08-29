@@ -16,6 +16,11 @@ AgroGen AI — chorvachilik uchun raqamli hayvon pasporti, mahsuldorlik monitori
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+
+## Alohida ma'lumotlar: AgroGen AI qanday ishlaydi?
+
+Quyida platformaning ishlash mantig'i bosqichma-bosqich ifodalangan:
+
 ```
 
 ## Streamlit Community Cloud
@@ -25,9 +30,6 @@ GitHub repository root qismiga `app.py`, `requirements.txt` va `data/animals.jso
 Demo ma’lumotlari sun’iy yaratilgan. AI tavsiyasi hozircha qoidaviy decision-support prototipidir; veterinariya yoki genetik tashxis emas.
 ---
 
-## 🧠 Alohida ma'lumotlar: AgroGen AI qanday ishlaydi?
-
-Quyida platformaning ishlash mantig'i bosqichma-bosqich ifodalangan:
    🐄 HAYVON
        │
        ▼
