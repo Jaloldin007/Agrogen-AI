@@ -272,7 +272,7 @@ st.dataframe(filtered, use_container_width=True, hide_index=True)
 
     # ======================== YANGI HAYVON QO'SHISH ========================
 st.divider()
-    st.subheader("➕ Yangi hayvon qoʻshish")
+st.subheader("➕ Yangi hayvon qoʻshish")
     with st.form("add_animal"):
         c1, c2, c3 = st.columns(3)
         new_id = c1.text_input("ID", value=f"UZ-{len(animals)+1:04d}")
