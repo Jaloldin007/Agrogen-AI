@@ -271,7 +271,7 @@ st.download_button(
 st.dataframe(filtered, use_container_width=True, hide_index=True)
 
     # ======================== YANGI HAYVON QO'SHISH ========================
-    st.divider()
+st.divider()
     st.subheader("➕ Yangi hayvon qoʻshish")
     with st.form("add_animal"):
         c1, c2, c3 = st.columns(3)
