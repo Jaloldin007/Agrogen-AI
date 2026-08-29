@@ -399,7 +399,7 @@ st.subheader("🧠 AgroGen AI qanday ishlaydi?")
 
 col1, col2 = st.columns([1, 2])
 with col1:
-st.markdown("""
+    st.markdown("""
 
 
     🐄 HAYVON
@@ -425,7 +425,7 @@ st.markdown("""
  """)
 
 with col2:
-st.markdown("""
+    st.markdown("""
 1. 🐄 HAYVON – Har bir hayvon tizimga kiritiladi. 
 2. 📋 MA'LUMOTLAR – Zoti, yoshi, vazni, sog'lig'i yoziladi. 
 3. 🗄️ RAQAMLI BAZA – Barcha ma'lumotlar xavfsiz saqlanadi. 
