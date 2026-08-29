@@ -477,8 +477,8 @@ st.subheader("☕ Qo'llab-quvvatlash")
 st.markdown("""
 Agar loyiham sizga foydali bo'lsa, quyidagi orqali qo'llab-quvvatlashingiz mumkin:
 
-- 💳 PayMe: +998 99 123 45 67  
-- 🏦 Bank kartasi: 9860 1201 2345 6789  
+- 💳 PayMe: +998 97 373 93 99  
+- 🏦 Bank kartasi: 9860 6004 0506 3766  
 - 🌐 GitHub Sponsor: [github.com/sponsors/Jaloldin007](https://github.com/sponsors/Jaloldin007)
 """)
 
@@ -494,7 +494,7 @@ with col2:
         pass
     st.markdown("""
     <div style="text-align: center;">
-        <h3>Jaloldin007</h3>
+        <h3>Jaloldin007</h3>       
         <p><b>AgroGen AI</b> — chorvachilikni raqamli boshqarish platformasi</p>
         <p style="color: #4ecdc4;">🚀 2026 yilgi AgriTech startaplari orasida yetakchi</p>
     </div>
@@ -521,10 +521,10 @@ Men shu maqsadda ishlayapman.
 
 ### 📞 Aloqa
 
-📧 Email: jaloldin007@gmail.com  
+📧 Email: shahandtel265@gmail.com  
 🔗 GitHub: [github.com/Jaloldin007](https://github.com/Jaloldin007)  
 🌐 Loyiha: [AgroGen AI](https://agrogen-ai.streamlit.app)  
-📱 Telegram: @jaloldin007
+📱 Telegram: @BiznezBusiness
 
 ---
 ### 🏆 Yutuqlar
