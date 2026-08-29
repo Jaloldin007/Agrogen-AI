@@ -306,7 +306,7 @@ with st.form("add_animal"):
             st.rerun()
 
 # ======================== YANGI HAYVON QO'SHISH ========================
-    st.divider()
+st.divider()
     st.subheader("➕ Yangi hayvon qoʻshish")
     with st.form("add_animal"):
         c1, c2, c3 = st.columns(3)
