@@ -269,7 +269,7 @@ st.download_button(
         use_container_width=True
     )
 
-    st.dataframe(filtered, use_container_width=True, hide_index=True)
+ st.dataframe(filtered, use_container_width=True, hide_index=True)
 
     # ======================== YANGI HAYVON QO'SHISH ========================
     st.divider()
