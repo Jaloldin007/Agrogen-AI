@@ -248,7 +248,7 @@ with right:
         st.write(f"Holati: {a['breeding_status']}")
 
 elif page == "Sut & vazn":
-st.subheader("🥛 Sut & ⚖️ vazn monitoringi")
+    st.subheader("🥛 Sut & ⚖️ vazn monitoringi")
     female_ids = animals[animals["sex"] == "Urgʻochi"]["id"].tolist()
     if not female_ids:
         st.warning("Urgʻochi hayvonlar mavjud emas.")
