@@ -457,26 +457,43 @@ with st.expander("❓ Tez-tez beriladigan savollar"):
 
 # ======================== SHARHLAR ========================
 st.subheader("⭐ Foydalanuvchi sharhlari")
+st.markdown("*AgroGen AI dan foydalangan fermerlarning fikrlari*")
+
 col1, col2 = st.columns(2)
 
 with col1:
-st.markdown("""
-<div class="testimonial">
-<div class="name">🧑‍🌾 Alisher Xo'jayev</div>
-<div>"AgroGen AI yordamida fermamdagi barcha hayvonlarni bir tizimda boshqarish imkoniga ega bo'ldim. Juda qulay!"</div>
-<div class="stars">⭐⭐⭐⭐⭐</div>
-</div>
-""", unsafe_allow_html=True)
+    st.markdown("""
+    <div class="testimonial">
+        <div class="name">🧑‍🌾 Alisher Xo'jayev</div>
+        <div>"AgroGen AI yordamida fermamdagi barcha hayvonlarni bir tizimda boshqarish imkoniga ega bo'ldim. Juda qulay!"</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="testimonial">
+        <div class="name">👨‍🌾 Rustam Shermatov</div>
+        <div>"Sut mahsuldorligi va vazn monitoringi juda aniq. Qishloq xo'jaligida haqiqiy yordamchi!"</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 with col2:
-st.markdown("""
-<div class="testimonial">
-<div class="name">👩‍🌾 Dilorom Qodirova</div>
-<div>"Naslchilik AI bo'limi menga eng yaxshi sigirlarni tanlashda yordam berdi. Mahsuldorlik 20% ga oshdi!"</div>
-<div class="stars">⭐⭐⭐⭐⭐</div>
-</div>
-""", unsafe_allow_html=True)
-
+    st.markdown("""
+    <div class="testimonial">
+        <div class="name">👩‍🌾 Dilorom Qodirova</div>
+        <div>"Naslchilik AI bo'limi menga eng yaxshi sigirlarni tanlashda yordam berdi. Mahsuldorlik 20% ga oshdi!"</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown("""
+    <div class="testimonial">
+        <div class="name">🧑‍🌾 Bekzod Karimov</div>
+        <div>"Ferma boshqaruvi hech qachon bunchalik oson bo'lmagan. AgroGen AI bilan vaqtimni 3 barobarga tejadim!"</div>
+        <div class="stars">⭐⭐⭐⭐⭐</div>
+    </div>
+    """, unsafe_allow_html=True)
 # ======================== QO'LLAB-QUVVATLASH ========================
 st.divider()
 st.subheader("☕ Qo'llab-quvvatlash")
