@@ -261,7 +261,7 @@ st.write(f"Topildi: {len(filtered)} ta")
 
     # CSV eksport
 csv = filtered.to_csv(index=False)
-    st.download_button(
+st.download_button(
         label="📥 CSV yuklab olish",
         data=csv,
         file_name='hayvonlar.csv',
