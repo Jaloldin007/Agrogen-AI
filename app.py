@@ -227,21 +227,22 @@ elif page == "Hayvonlar":
 elif page == "Hayvon pasporti":
     st.subheader("🪪 Raqamli hayvon pasporti")
     selected = st.selectbox("Hayvonni tanlang", animals["id"].tolist())
-a = animals[animals["id"] == selected].iloc[0]
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("ID", a["id"])
-c2.metric("Zot", a["breed"])
-c3.metric("Vazn", f'{a["weight"]} kg')
-c4.metric("Sut", f'{a["milk"]} L/kun')
+    a = animals[animals["id"] == selected].iloc[0]
 
-st.divider()
-left, right = st.columns(2)
-with left:
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("ID", a["id"])
+    c2.metric("Zot", a["breed"])
+    c3.metric("Vazn", f'{a["weight"]} kg')
+    c4.metric("Sut", f'{a["milk"]} L/kun')
+
+    st.divider()
+    left, right = st.columns(2)
+    with left:
         st.write("Asosiy maʼlumotlar")
         st.write(f"Jinsi: {a['sex']}")
         st.write(f"Yoshi: {a['age']} yosh")
         st.write(f"Emlash: {a['vaccination']}")
-with right:
+    with right:
         st.write("Nasl maʼlumotlari")
         st.write(f"Ota: {a['father']}")
         st.write(f"Ona: {a['mother']}")
@@ -265,7 +266,7 @@ elif page == "Sut & vazn":
         }).set_index("Sana")
 
         c1, c2 = st.columns(2)
-    with c1:
+        with c1:
             st.write("Sut dinamikasi")
             fig = px.line(demo_data, y='Sut (L)', title='Sut dinamikasi',
                           color_discrete_sequence=['#4ecdc4'])
@@ -273,6 +274,13 @@ elif page == "Sut & vazn":
                               font=dict(color='#b8cfc3'))
             st.plotly_chart(fig, use_container_width=True)
 
+        with c2:
+            st.write("Vazn dinamikasi")
+            fig = px.line(demo_data, y='Vazn (kg)', title='Vazn dinamikasi',
+                          color_discrete_sequence=['#8cffc3'])
+            fig.update_layout(paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='rgba(0,0,0,0)',
+                              font=dict(color='#b8cfc3'))
+            st.plotly_chart(fig, use_container_width=True)
         with c2:
             st.write("Vazn dinamikasi")
             fig = px.line(demo_data, y='Vazn (kg)', title='Vazn dinamikasi',
