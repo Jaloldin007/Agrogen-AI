@@ -236,19 +236,19 @@ c4.metric("Sut", f'{a["milk"]} L/kun')
 
 st.divider()
 left, right = st.columns(2)
-    with left:
+with left:
         st.write("Asosiy maʼlumotlar")
         st.write(f"Jinsi: {a['sex']}")
         st.write(f"Yoshi: {a['age']} yosh")
         st.write(f"Emlash: {a['vaccination']}")
-    with right:
+with right:
         st.write("Nasl maʼlumotlari")
         st.write(f"Ota: {a['father']}")
         st.write(f"Ona: {a['mother']}")
         st.write(f"Holati: {a['breeding_status']}")
 
 elif page == "Sut & vazn":
-    st.subheader("🥛 Sut & ⚖️ vazn monitoringi")
+st.subheader("🥛 Sut & ⚖️ vazn monitoringi")
     female_ids = animals[animals["sex"] == "Urgʻochi"]["id"].tolist()
     if not female_ids:
         st.warning("Urgʻochi hayvonlar mavjud emas.")
@@ -265,7 +265,7 @@ elif page == "Sut & vazn":
         }).set_index("Sana")
 
         c1, c2 = st.columns(2)
-        with c1:
+    with c1:
             st.write("Sut dinamikasi")
             fig = px.line(demo_data, y='Sut (L)', title='Sut dinamikasi',
                           color_discrete_sequence=['#4ecdc4'])
