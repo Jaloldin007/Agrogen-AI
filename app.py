@@ -93,14 +93,14 @@ st.markdown("""
     .block-container {
         margin: 2rem 3rem;
         max-width: 1400px;
-</style>
-""", unsafe_allow_html=True)
         background: rgba(255,255,255,0.03);
         border-radius: 30px;
         backdrop-filter: blur(10px);
         border: 1px solid rgba(255,255,255,0.06);
         box-shadow: 0 25px 80px rgba(0,0,0,0.5);
     }
+</style>
+""", unsafe_allow_html=True)
     h1 {
         font-size: 3.5rem !important;
         font-weight: 800 !important;
