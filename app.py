@@ -82,233 +82,73 @@ with col2:
 
 st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
 # ===========================================
-# CSS DIZAYN
+# PREMIUM 5 ★ CSS DIZAYN
 # ===========================================
 st.markdown("""
 <style>
-.main {
-    background: linear-gradient(135deg, #0a1620, #142830);
-}
-.block-container {
-    padding-top: 1.5rem;
-    max-width: 1350px;
-}
-.hero {
-    padding: 2.5rem 3rem;
-    border-radius: 24px;
-    background: linear-gradient(135deg, #0d2018, #1a4a2e);
-    margin-bottom: 2rem;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
-    border: 1px solid rgba(255,255,255,0.08);
-    position: relative;
-    overflow: hidden;
-}
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -20%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(78,205,196,0.05), transparent);
-    border-radius: 50%;
-}
-.hero h1 {
-    margin: 0;
-    font-size: 3.2rem;
-    background: linear-gradient(90deg, #8cffc3, #4ecdc4, #8cffc3);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shimmer 3s ease-in-out infinite;
-}
-@keyframes shimmer {
-    0% { background-position: 0% center; }
-    50% { background-position: 200% center; }
-    100% { background-position: 0% center; }
-}
-</style>
-""", unsafe_allow_html=True)
-.hero p { 
-        color: #b8cfc3; 
-        font-size: 1.2rem; 
-        margin-top: 0.5rem; 
-        opacity: 0.9;
+    .stApp {
+        background: linear-gradient(135deg, #0a1628, #1a2a3a);
     }
-    .hero .badge {
-        display: inline-block;
-        background: rgba(78,205,196,0.15);
-        color: #4ecdc4;
-        padding: 0.3rem 1.2rem;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        border: 1px solid rgba(78,205,196,0.2);
-        margin-top: 0.5rem;
+    .block-container {
+        padding: 2rem 3rem;
+        max-width: 1400px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 25px 80px rgba(0,0,0,0.5);
     }
-    
-    /* KPI kartalari */
-    .kpi {
-        padding: 1.4rem 1.8rem;
-        border-radius: 18px;
-        background: rgba(13, 28, 21, 0.7);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(37, 69, 54, 0.4);
-        text-align: center;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    h1 {
+        font-size: 3.5rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
     }
-    .kpi:hover { 
-        transform: translateY(-8px) scale(1.02);
-        box-shadow: 0 15px 40px rgba(78,205,196,0.15);
-        border-color: rgba(78,205,196,0.3);
+    [data-testid="metric-container"] {
+        background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)) !important;
+        border-radius: 20px !important;
+        padding: 1.5rem !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        backdrop-filter: blur(20px) !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+        transition: all 0.4s ease !important;
     }
-    .kpi small { 
-        color: #89a195; 
-        font-size: 0.85rem; 
-        display: block; 
-        text-transform: uppercase;
-        letter-spacing: 1px;
+    [data-testid="metric-container"]:hover {
+        transform: translateY(-5px) !important;
+        border-color: rgba(255,215,0,0.3) !important;
     }
-    .kpi b { 
-        font-size: 2.5rem; 
-        color: #8cffc3; 
-        display: block; 
-        margin-top: 0.3rem;
-        font-weight: 700;
+    div[data-testid="metric-container"]:nth-child(2) .stMetricValue {
+        background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
     }
-    .kpi .trend-up { color: #4ecdc4; font-size: 0.8rem; }
-    
-    /* AI quti */
-    .ai-box {
-        padding: 1.8rem 2rem;
-        border-radius: 18px;
-        background: linear-gradient(135deg, #0d2818, #1a4a2e);
-        border: 1px solid rgba(78, 205, 196, 0.2);
-        box-shadow: 0 8px 30px rgba(78, 205, 196, 0.05);
-        transition: all 0.3s ease;
+    div[data-testid="metric-container"]:nth-child(3) .stMetricValue {
+        background: linear-gradient(135deg, #00f260, #0575e6) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
     }
-    .ai-box:hover {
-        box-shadow: 0 8px 40px rgba(78, 205, 196, 0.12);
+    h2, h3 {
+        color: rgba(255,255,255,0.9) !important;
+        border-left: 4px solid #ffd700 !important;
+        padding-left: 1rem !important;
     }
-    
-    /* Testimonial */
-    .testimonial {
-        padding: 1.5rem 1.8rem;
-        border-radius: 16px;
-        background: rgba(13, 28, 21, 0.5);
-        border-left: 4px solid #4ecdc4;
-        margin: 0.8rem 0;
-        backdrop-filter: blur(8px);
-        transition: all 0.3s ease;
+    .stDataFrame thead th {
+        background: rgba(255,215,0,0.1) !important;
+        color: #ffd700 !important;
     }
-    .testimonial:hover {
-        background: rgba(13, 28, 21, 0.7);
-        transform: translateX(5px);
+    hr {
+        border: none !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent) !important;
     }
-    .testimonial .name { 
-        color: #8cffc3; 
-        font-weight: bold; 
-        font-size: 1.05rem;
-    }
-    .testimonial .stars { 
-        color: #f4c430; 
-        letter-spacing: 2px;
-    }
-    .testimonial .role {
-        color: #89a195;
-        font-size: 0.85rem;
-    }
-    
-    /* Section description */
-    .section-desc {
-        color: #b8cfc3;
-        background: rgba(13, 28, 21, 0.4);
-        padding: 1.2rem 1.8rem;
-        border-radius: 14px;
-        border-left: 4px solid #4ecdc4;
-        margin-bottom: 1.8rem;
-        font-size: 1.05rem;
-        line-height: 1.6;
-        backdrop-filter: blur(4px);
-    }
-    .section-desc b {
-        color: #8cffc3;
-    }
-    
-    /* Footer */
-    .footer {
-        text-align: center;
-        color: #4a6a5a;
-        font-size: 0.85rem;
-        padding: 2rem 0;
-        border-top: 1px solid rgba(37, 69, 54, 0.2);
-        margin-top: 2.5rem;
-    }
-    
-    /* Expander premium */
-    .streamlit-expanderHeader {
-        background: rgba(13, 28, 21, 0.5) !important;
-        border-radius: 14px !important;
-        border: 1px solid rgba(37, 69, 54, 0.2) !important;
-        font-weight: 600 !important;
-        color: #b8cfc3 !important;
-        transition: all 0.3s ease;
-    }
-    .streamlit-expanderHeader:hover {
-        background: rgba(13, 28, 21, 0.8) !important;
-        border-color: rgba(78,205,196,0.2) !important;
-    }
-    
-    /* Sidebar premium */
-    .css-1d391kg {
-        background: linear-gradient(180deg, #0a1620, #0d1c15);
-    }
-    
-    /* Tugmalar */
-    .stButton > button {
-        background: linear-gradient(90deg, #0d2818, #1a4a2e);
-        color: #8cffc3;
-        border: 1px solid rgba(78,205,196,0.3);
-        border-radius: 14px;
-        padding: 0.7rem 2rem;
-        transition: all 0.4s ease;
-        font-weight: 500;
-    }
-    .stButton > button:hover {
-        background: linear-gradient(90deg, #1a4a2e, #0d2818);
-        box-shadow: 0 0 35px rgba(78, 205, 196, 0.2);
-        transform: scale(1.03);
-        border-color: #4ecdc4;
-        color: white;
-    }
-    
-    /* Hayvon rasmi uchun */
-    .animal-card {
-        padding: 1.5rem;
-        border-radius: 18px;
-        background: rgba(13, 28, 21, 0.6);
-        border: 1px solid rgba(37, 69, 54, 0.3);
-        text-align: center;
-        backdrop-filter: blur(8px);
-    }
-    .animal-card img {
-        border-radius: 16px;
-        max-width: 100%;
-        height: auto;
-    }
-    .animal-card .name {
-        color: #8cffc3;
-        font-size: 1.3rem;
-        font-weight: bold;
-        margin-top: 0.8rem;
-    }
-    .animal-card .detail {
-        color: #89a195;
-        font-size: 0.95rem;
+    .stAlert {
+        background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(255,215,0,0.01)) !important;
+        border: 1px solid rgba(255,215,0,0.1) !important;
+        border-radius: 16px !important;
     }
 </style>
 """, unsafe_allow_html=True)
-
 # ======================== RASM (Hero) ========================
 try:
     image = Image.open('logo.jpg')
