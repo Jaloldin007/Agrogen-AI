@@ -174,8 +174,11 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+try:
+    image = Image.open("logo.jpg")
+    st.image(image, use_container_width=True)
 except:
-    st.warning("⚠️ Rasm (logo.jpg) topilmadi. Iltimos, faylni yuklang.")
+    st.warning("⚠️ Rasm (logo.jpg) topilmadi. Iltimos, faylni yuklang.")
 
 st.markdown("""
 <div class="hero">
