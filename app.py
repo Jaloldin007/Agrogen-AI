@@ -218,7 +218,7 @@ if page == "🏠 Dashboard":
     st.markdown("""
     <div class="section-desc">
       st.markdown("<b>Dashboard</b> - ferma faoliyatining asosiy ko'rsatkichlari: hayvonlar soni, o'rtacha sut va vazn", unsafe_allow_html=True)
-        zotlar bo'yicha taqsimot, eng mahsuldor hayvonlar va <b>kunlik yangilanishlar</b>.
+      st.markdown("zotlar bo'yicha taqsimot, eng mahsuldor hayvonlar va <b>kunlik yangilanishlar</b>.", unsafe_allow_html=True)
     </div>
     """, unsafe_allow_html=True)
 
