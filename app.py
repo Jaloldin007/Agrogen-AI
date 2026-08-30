@@ -217,7 +217,7 @@ st.sidebar.info("✅ MVP: 100 ta demo hayvon. Real ma'lumotlar va ML modeli keyi
 if page == "🏠 Dashboard":
     st.markdown("""
     <div class="section-desc">
-        📊 <b>Dashboard</b> — ferma faoliyatining asosiy ko'rsatkichlari: hayvonlar soni, o'rtacha sut va vazn, 
+      st.markdown("<b>Dashboard</b> - ferma faoliyatining asosiy ko'rsatkichlari: hayvonlar soni, o'rtacha sut va vazn", unsafe_allow_html=True)
         zotlar bo'yicha taqsimot, eng mahsuldor hayvonlar va <b>kunlik yangilanishlar</b>.
     </div>
     """, unsafe_allow_html=True)
