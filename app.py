@@ -202,9 +202,6 @@ st.markdown("""
     <span class="badge">📊 100+ hayvon ma'lumotlari</span>
 </div>
 """, unsafe_allow_html=True)
-    </div>
-</div>
-""", unsafe_allow_html=True)
 
 # ======================== MALUMOTLARNI YUKLASH ========================
 DATA_FILE = Path("data/animals.json")
