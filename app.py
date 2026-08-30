@@ -197,15 +197,11 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 st.markdown("""
-AI asosida tahlil</span>
-      <span class="badge">📊 100+ hayvon ma'lumotlari</span>
-    </div>
-    """, unsafe_allow_html=True)
+<div class="hero">
+    <span class="badge">🤖 AI asosida tahlil</span>
+    <span class="badge">📊 100+ hayvon ma'lumotlari</span>
 </div>
 """, unsafe_allow_html=True)
-    </div>
-</div>
-""")
     </div>
 </div>
 """, unsafe_allow_html=True)
