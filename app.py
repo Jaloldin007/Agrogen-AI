@@ -13,10 +13,65 @@ st.set_page_config(
     page_icon="🐄",
     layout="wide",
     initial_sidebar_state="expanded"
+    # ===========================================
+# YANGILANGAN MA'LUMOTLAR (URG'OCHI 87)
+# ===========================================
+JAMI_HAYVON = 100
+URG_OCHI = 87
+O_RTACHA_VAZN = 509
+BOSHIGA_SUT = 11.5
+JAMI_SUT = URG_OCHI * BOSHIGA_SUT
+O_RTACHA_SUT = round(JAMI_SUT / URG_OCHI, 1)
 )
 
 # ======================== PREMIUM DIZAYN ========================
 st.markdown("""
+# ===========================================
+# ASOSIY INTERFEYS
+# ===========================================
+st.title("🐄 AgroGen AI | Premium")
+st.caption("Kunlik yangilanishlar")
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(label="JAMI HAYVON", value=JAMI_HAYVON)
+
+with col2:
+    st.metric(label="URG'OCHI", value=URG_OCHI)
+
+with col3:
+    st.metric(label="O'RTACHA SUT", value=f"{O_RTACHA_SUT} L")
+
+with col4:
+    st.metric(label="O'RTACHA VAZN", value=f"{O_RTACHA_VAZN} kg")
+
+# ===========================================
+# FERMA KO'RSATKICHLARI
+# ===========================================
+st.subheader("📊 Ferma ko'rsatkichlari")
+
+zotlar = {
+    "Qora-Ola": 45,
+    "Simmental": 30,
+    "Golshtin": 25
+}
+
+df = pd.DataFrame({
+    "Zot": list(zotlar.keys()),
+    "Soni": list(zotlar.values())
+})
+
+st.bar_chart(df.set_index("Zot"))
+st.dataframe(df, use_container_width=True)
+
+st.info(f"""
+📌 Xulosa:  
+- Jami hayvon: {JAMI_HAYVON} bosh  
+- Urg'ochilar: {URG_OCHI} ta ({round(URG_OCHI/JAMI_HAYVON*100)}%)  
+- Kunlik jami sut: {JAMI_SUT} L  
+- Boshiga o'rtacha sut: {O_RTACHA_SUT} L  
+""")
 <style>
     /* Asosiy fon */
     .main { 
