@@ -81,6 +81,7 @@ with col2:
     st.write(f"Boshiga o'rtacha sut: {O_RTACHA_SUT} L")
 
 st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
+st.markdown("""
 <style>
     /* Asosiy fon */
     .main { 
@@ -102,6 +103,8 @@ st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
         position: relative;
         overflow: hidden;
     }
+    </style>
+    """, unsafe_allow_html=True) 
     .hero::before {
         content: '';
         position: absolute;
