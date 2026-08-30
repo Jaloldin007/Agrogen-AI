@@ -91,7 +91,7 @@ st.markdown("""
         background: #0a1628;
     }
     .block-container {
-        padding: 2rem 3rem;
+        margin: 2rem 3rem;
         max-width: 1400px;
 </style>
 """, unsafe_allow_html=True)
