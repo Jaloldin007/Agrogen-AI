@@ -205,7 +205,7 @@ AI asosida tahlil</span>
 """, unsafe_allow_html=True)
     </div>
 </div>
-""", unsafe_allow_html=True)
+""")
     </div>
 </div>
 """, unsafe_allow_html=True)
