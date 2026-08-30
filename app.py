@@ -90,6 +90,8 @@ st.markdown("""
     .stApp {
         background: linear-gradient(135deg, #0a1628, #1a2a3a);
     }
+</style>
+""", unsafe_allow_html=True)
     .block-container {
         padding: 2rem 3rem;
         max-width: 1400px;
@@ -138,8 +140,6 @@ st.markdown("""
         background: rgba(255,215,0,0.1) !important;
         color: #ffd700 !important;
     }
-</style>
-""", unsafe_allow_html=True)
 hr {
         border: none !important;
         height: 1px !important;
@@ -150,8 +150,6 @@ hr {
         border: 1px solid rgba(255,215,0,0.1) !important;
         border-radius: 16px !important;
     }
-</style>
-""", unsafe_allow_html=True)
 # ======================== RASM (Hero) ========================
 try:
     image = Image.open('logo.jpg')
