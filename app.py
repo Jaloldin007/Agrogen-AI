@@ -83,15 +83,13 @@ with col2:
 
 st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
 # ===========================================
-# PREMIUM 5 ★ CSS DIZAYN
+# PREMIUM DIZAYN (CSS)
 # ===========================================
 st.markdown("""
 <style>
     .stApp {
         background: #0a1628;
     }
-</style>
-""", unsafe_allow_html=True)    
     .block-container {
         padding: 2rem 3rem;
         max-width: 1400px;
@@ -140,6 +138,8 @@ st.markdown("""
         background: rgba(255,215,0,0.1) !important;
         color: #ffd700 !important;
     }
+</style>
+""", unsafe_allow_html=True)
 hr {
         border: none !important;
         height: 1px !important;
