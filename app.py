@@ -87,7 +87,7 @@ st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
 # ===========================================
 st.markdown("""
 <style>
-    .stApp {
+.stApp {
         background: #0a1628;
     }
 </style>
