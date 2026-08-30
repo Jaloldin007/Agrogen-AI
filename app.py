@@ -249,7 +249,7 @@ st.sidebar.info("✅ MVP: 100 ta demo hayvon. Real ma'lumotlar va ML modeli keyi
 
 # ======================== 1. DASHBOARD ========================
 if page == "🏠 Dashboard":
-  st.markdown("""
+    st.markdown("""
 <div style="margin-bottom: 20px;">
     <h2 style="margin-bottom: 5px;">Ferma asosiy ko'rsatkichlari</h2>
     <p style="margin-top: 0; color: #666;">
