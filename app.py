@@ -257,8 +257,6 @@ if page == "🏠 Dashboard":
     </p>
 </div>
 """, unsafe_allow_html=True)
-    </div>
-    """, unsafe_allow_html=True)
 
     # KPI kartalari
     females = animals[animals["sex"] == "Urgʻochi"]
