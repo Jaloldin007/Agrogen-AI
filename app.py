@@ -66,12 +66,21 @@ st.bar_chart(df.set_index("Zot"))
 st.dataframe(df, use_container_width=True)
 
 st.info(f"""
-Xulosa:  
-- Jami hayvon: {JAMI_HAYVON} bosh  
-- Urg'ochilar: {URG_OCHI} ta ({round(URG_OCHI/JAMI_HAYVON*100)}%)
-- Kunlik jami sut: {JAMI_SUT} L  
-- Boshiga o'rtacha sut: {O_RTACHA_SUT} L  
-""")
+# ===========================================
+# XULOSA
+# ===========================================
+st.divider()
+st.subheader("📌 Xulosa")
+
+col1, col2 = st.columns(2)
+with col1:
+    st.write(f"Jami hayvon: {JAMI_HAYVON} bosh")
+    st.write(f"Urg'ochilar: {URG_OCHI} ta")
+with col2:
+    st.write(f"Kunlik jami sut: {JAMI_SUT} L")
+    st.write(f"Boshiga o'rtacha sut: {O_RTACHA_SUT} L")
+
+st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
 <style>
     /* Asosiy fon */
     .main { 
