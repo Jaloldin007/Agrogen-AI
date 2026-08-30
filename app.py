@@ -138,6 +138,8 @@ st.markdown("""
         background: rgba(255,215,0,0.1) !important;
         color: #ffd700 !important;
     }
+</style>
+""", unsafe_allow_html=True)
     hr {
         border: none !important;
         height: 1px !important;
