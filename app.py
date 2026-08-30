@@ -93,6 +93,8 @@ st.markdown("""
     .block-container {
         padding: 2rem 3rem;
         max-width: 1400px;
+</style>
+""", unsafe_allow_html=True)
         background: rgba(255,255,255,0.03);
         border-radius: 30px;
         backdrop-filter: blur(10px);
