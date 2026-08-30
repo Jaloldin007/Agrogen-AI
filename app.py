@@ -88,11 +88,11 @@ st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
 st.markdown("""
 <style>
     .stApp {
-        background: linear-gradient(135deg, #0a1628, #1a2a3a);
+        background: #0a1628;
     }
 </style>
 """, unsafe_allow_html=True)
-    .block-container {
+.block-container {
         padding: 2rem 3rem;
         max-width: 1400px;
         background: rgba(255,255,255,0.03);
