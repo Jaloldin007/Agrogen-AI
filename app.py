@@ -279,7 +279,7 @@ if page == "🏠 Dashboard":
             <div style="font-size: 4rem; line-height: 1.2;">
                 {'🐮' if a_img['sex'] == 'Urgʻochi' else '🐂'}
             </div>
-            <div class="name">{a_img['id']} — {a_img['breed']}</div>
+            st.markdown(f'<div class="name">{a_img["id"]} - {a_img["breed"]}</div>
             <div class="detail">Jinsi: {a_img['sex']} | Yoshi: {a_img['age']} yosh</div>
             <div class="detail">Vazni: {a_img['weight']} kg | Suti: {a_img['milk']} L/kun</div>
             <div class="detail" style="margin-top: 0.5rem; color: #4ecdc4;">
