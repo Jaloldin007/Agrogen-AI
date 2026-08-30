@@ -24,163 +24,156 @@ BOSHIGA_SUT = 11.5
 JAMI_SUT = URG_OCHI * BOSHIGA_SUT
 O_RTACHA_SUT = round(JAMI_SUT / URG_OCHI, 1)
 
-# ======================== PREMIUM DIZAYN ========================
+# ===========================================
+# PREMIUM 5 ★ CSS DIZAYN
+# ===========================================
 st.markdown("""
 <style>
-# =========================================== # ASOSIY INTERFEYS # ===========================================
-st.title("🐄 AgroGen AI | Premium")
-st.caption("Kunlik yangilanishlar")
-
-col1, col2, col3, col4 = st.columns(4)
-
-with col1:
-    st.metric(label="JAMI HAYVON", value=JAMI_HAYVON)
-
-with col2:
-    st.metric(label="URG'OCHI", value=URG_OCHI)
-
-with col3:
-    st.metric(label="O'RTACHA SUT", value=f"{O_RTACHA_SUT} L")
-
-with col4:
-    st.metric(label="O'RTACHA VAZN", value=f"{O_RTACHA_VAZN} kg")
-
-# ===========================================
-# FERMA KO'RSATKICHLARI
-# ===========================================
-st.subheader("📊 Ferma ko'rsatkichlari")
-
-zotlar = {
-    "Qora-Ola": 45,
-    "Simmental": 30,
-    "Golshtin": 25
-}
+    .stApp {
+        background: #0a1628;
+    }
+    .block-container {
+        padding: 2rem 3rem;
+        max-width: 1400px;
+        background: rgba(255,255,255,0.03);
+        border-radius: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.06);
+        box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+    }
+    h1 {
+        font-size: 3.5rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+    .stCaption {
+        font-size: 1.1rem !important;
+        color: rgba(255,255,255,0.5) !important;
+        letter-spacing: 3px !important;
+        text-transform: uppercase !important;
+        font-weight: 300 !important;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding-bottom: 0.5rem;
+    }
+    [data-testid="metric-container"] {
+        background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01)) !important;
+        border-radius: 20px !important;
+        padding: 1.5rem !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        backdrop-filter: blur(20px) !important;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+        transition: all 0.4s ease !important;
+    }
+    [data-testid="metric-container"]:hover {
+        transform: translateY(-5px) !important;
+        border-color: rgba(255,215,0,0.3) !important;
+    }
+    [data-testid="metric-container"] label {
+        color: rgba(255,255,255,0.6) !important;
+        font-size: 0.9rem !important;
+        text-transform: uppercase !important;
+        letter-spacing: 2px !important;
+        font-weight: 600 !important;
+    }
+    [data-testid="metric-container"] .stMetricValue {
+        font-size: 2.8rem !important;
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #ffffff, #f0f0f0) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        text-shadow: 0 0 40px rgba(255,255,255,0.1) !important;
+    }
+    div[data-testid="metric-container"]:nth-child(2) .stMetricValue {
+        background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+    div[data-testid="metric-container"]:nth-child(3) .stMetricValue {
+        background: linear-gradient(135deg, #00f260, #0575e6) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+    div[data-testid="metric-container"]:nth-child(4) .stMetricValue {
+        background: linear-gradient(135deg, #f093fb, #f5576c) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+    }
+    h2 {
+        color: rgba(255,255,255,0.9) !important;
+        font-weight: 700 !important;
+        font-size: 2rem !important;
+        letter-spacing: -0.5px !important;
+        border-left: 4px solid #ffd700 !important;
+        padding-left: 1rem !important;
+        margin-top: 2rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    h3 {
+        color: rgba(255,255,255,0.8) !important;
+        font-weight: 600 !important;
+        font-size: 1.5rem !important;
+        letter-spacing: -0.3px !important;
+        border-left: 3px solid #00f260 !important;
+        padding-left: 0.8rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .stDataFrame {
+        background: rgba(255,255,255,0.03) !important;
+        border-radius: 16px !important;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+        overflow: hidden !important;
+    }
+    .stDataFrame table {
+        color: rgba(255,255,255,0.85) !important;
+    }
+    .stDataFrame thead th {
+        background: rgba(255,215,0,0.1) !important;
+        color: #ffd700 !important;
+        font-weight: 600 !important;
+    }
+    .stBarChart {
+        background: rgba(255,255,255,0.03) !important;
+        border-radius: 16px !important;
+        padding: 1rem !important;
+        border: 1px solid rgba(255,255,255,0.05) !important;
+    }
+    hr {
+        border: none !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent) !important;
+        margin: 2rem 0 !important;
+    }
+    .stAlert {
+        background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(255,215,0,0.01)) !important;
+        border: 1px solid rgba(255,215,0,0.1) !important;
+        border-radius: 16px !important;
+        color: rgba(255,255,255,0.9) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+    .stAlert p {
+        font-size: 1.05rem !important;
+        line-height: 1.8 !important;
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #ffd700, #f7971e);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #f7971e, #ffd700);
+    }
 </style>
 """, unsafe_allow_html=True)
-
-df = pd.DataFrame({
-    "Zot": list(zotlar.keys()),
-    "Soni": list(zotlar.values())
-})
-
-st.bar_chart(df.set_index("Zot"))
-st.dataframe(df, use_container_width=True)
-
-st.info(f"""
-# ===========================================
-# XULOSA
-# ===========================================
-st.divider()
-st.subheader("📌 Xulosa")
-
-col1, col2 = st.columns(2)
-
-with col1:
-    st.write(f"Jami hayvon: {JAMI_HAYVON} bosh")
-    st.write(f"Urg'ochilar: {URG_OCHI} ta")
-
-with col2:
-    st.write(f"Kunlik jami sut: {JAMI_SUT} L")
-    st.write(f"Boshiga o'rtacha sut: {O_RTACHA_SUT} L")
-
-st.write(
-    f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%"
-)
-
-# ======================== PREMIUM DIZAYN (CSS) ========================
-st.markdown('''
-<style>
-
-.stApp {
-    background: #0a1628;
-}
-
-.block-container {
-    margin: 2rem 3rem;
-    max-width: 1400px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
-}
-
-h1 {
-    font-size: 3.5rem !important;
-    font-weight: 800 !important;
-    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-[data-testid="metric-container"] {
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.05),
-        rgba(255,255,255,0.01)
-    ) !important;
-    border-radius: 20px !important;
-    padding: 1.5rem !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    backdrop-filter: blur(20px) !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
-    transition: all 0.4s ease !important;
-}
-
-[data-testid="metric-container"]:hover {
-    transform: translateY(-5px) !important;
-    border-color: rgba(255,215,0,0.3) !important;
-}
-
-div[data-testid="metric-container"]:nth-child(2) .stMetricValue {
-    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-div[data-testid="metric-container"]:nth-child(3) .stMetricValue {
-    background: linear-gradient(135deg, #00f260, #0575e6) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
-
-h2, h3 {
-    color: rgba(255,255,255,0.9) !important;
-    border-left: 4px solid #ffd700 !important;
-    padding-left: 1rem !important;
-}
-
-.stDataFrame thead th {
-    background: rgba(255,215,0,0.1) !important;
-    color: #ffd700 !important;
-}
-
-hr {
-    border: none !important;
-    height: 1px !important;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,215,0,0.2),
-        transparent
-    ) !important;
-}
-
-.stAlert {
-    background: linear-gradient(
-        135deg,
-        rgba(255,215,0,0.05),
-        rgba(255,215,0,0.01)
-    ) !important;
-    border: 1px solid rgba(255,215,0,0.1) !important;
-    border-radius: 16px !important;
-}
-
-</style>
-''', unsafe_allow_html=True)# ======================== RASM (Hero) ========================
-try:
-    image = Image.open('logo.jpg')
-    st.image(image, use_container_width=True)
 except:
     st.warning("⚠️ Rasm (logo.jpg) topilmadi. Iltimos, faylni yuklang.")
 
