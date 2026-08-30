@@ -91,7 +91,7 @@ st.markdown("""
         background: #0a1628;
     }
     .block-container {
-        pending: 2rem 3rem;
+        margin: 2rem 3rem;
         max-width: 1400px;
         background: rgba(255,255,255,0.03);
         border-radius: 30px;
@@ -99,8 +99,6 @@ st.markdown("""
         border: 1px solid rgba(255,255,255,0.06);
         box-shadow: 0 25px 80px rgba(0,0,0,0.5);
     }
-</style>
-""", unsafe_allow_html=True)
     h1 {
         font-size: 3.5rem !important;
         font-weight: 800 !important;
@@ -140,8 +138,6 @@ st.markdown("""
         background: rgba(255,215,0,0.1) !important;
         color: #ffd700 !important;
     }
-</style>
-""", unsafe_allow_html=True)
 hr {
         border: none !important;
         height: 1px !important;
@@ -152,6 +148,9 @@ hr {
         border: 1px solid rgba(255,215,0,0.1) !important;
         border-radius: 16px !important;
     }
+
+    </style>
+""", unsafe_allow_html=True)
 # ======================== RASM (Hero) ========================
 try:
     image = Image.open('logo.jpg')
@@ -159,14 +158,42 @@ try:
 except:
     st.warning("⚠️ Rasm (logo.jpg) topilmadi. Iltimos, faylni yuklang.")
 
-st.markdown("""
+ st.markdown("""
 <div class="hero">
-   st.markdown("<h1>🐄 AgroGen AI Premium</h1>", unsafe_allow_html=True)
-    <p>Chorvachilikni raqamli boshqarish, mahsuldorlik monitoringi va naslchilik qarorlarini maʼlumotlar asosida qoʻllab-quvvatlaydigan <b>aqlli platforma</b>.</p>
+    <h1>🐄 AgroGen AI Premium</h1>
+
+    <p>
+        Chorvachilikni raqamli boshqarish, mahsuldorlik monitoringi
+        va naslchilik qarorlarini maʼlumotlar asosida qoʻllab-quvvatlaydigan
+        <b>aqlli platforma</b>.
+    </p>
+
     <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem;">
-    st.markdown('<span class="badge">🚀 2026 AgriTech yetakchisi</span>', unsafe_allow_html=True)
-    st.markdown('<span class="badge">🧠 AI asosida tahlil</span>', unsafe_allow_html=True)
-    st.markdown("<span class="badge">📊 100+ hayvon ma'lumotlari</span>", unsafe_allow_html=True)
+        <span class="badge">🚀 2026 AgriTech yetakchisi</span>
+        <span class="badge">st.markdown("""
+<div class="hero">
+    <h1>🐄 AgroGen AI Premium</h1>
+
+    <p>
+        Chorvachilikni raqamli boshqarish, mahsuldorlik monitoringi
+        va naslchilik qarorlarini maʼlumotlar asosida qoʻllab-quvvatlaydigan
+        <b>aqlli platforma</b>.
+    </p>
+
+    <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem;">
+        <span class="badge">🚀 2026 AgriTech yetakchisi</span>
+        <span class="badge">🧠 AI asosida tahlil</span>
+        <span class="badge">📊 100+ hayvon ma'lumotlari</span>
+    </div>
+</div>
+""", unsafe_allow_html=True) AI asosida tahlil</span>
+        <span class="badge">📊 100+ hayvon ma'lumotlari</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+    </div>
+</div>
+""", unsafe_allow_html=True)
     </div>
 </div>
 """, unsafe_allow_html=True)
