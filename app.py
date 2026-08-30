@@ -23,7 +23,6 @@ O_RTACHA_VAZN = 509
 BOSHIGA_SUT = 11.5
 JAMI_SUT = URG_OCHI * BOSHIGA_SUT
 O_RTACHA_SUT = round(JAMI_SUT / URG_OCHI, 1)
-)
 
 # ======================== PREMIUM DIZAYN ========================
 st.markdown("""
