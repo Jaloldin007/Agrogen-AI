@@ -199,8 +199,8 @@ st.markdown("""
 st.markdown("""
 AI asosida tahlil</span>
       <span class="badge">📊 100+ hayvon ma'lumotlari</span>
-      """, unsafe_allow_html=True)
     </div>
+    """, unsafe_allow_html=True)
 </div>
 """, unsafe_allow_html=True)
     </div>
