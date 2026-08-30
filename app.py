@@ -26,9 +26,8 @@ O_RTACHA_SUT = round(JAMI_SUT / URG_OCHI, 1)
 
 # ======================== PREMIUM DIZAYN ========================
 st.markdown("""
-# ===========================================
-# ASOSIY INTERFEYS
-# ===========================================
+<style>
+# =========================================== # ASOSIY INTERFEYS # ===========================================
 st.title("🐄 AgroGen AI | Premium")
 st.caption("Kunlik yangilanishlar")
 
@@ -56,6 +55,8 @@ zotlar = {
     "Simmental": 30,
     "Golshtin": 25
 }
+</style>
+""", unsafe_allow_html=True)
 
 df = pd.DataFrame({
     "Zot": list(zotlar.keys()),
