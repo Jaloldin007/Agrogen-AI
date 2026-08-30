@@ -86,99 +86,98 @@ with col2:
 st.write(
     f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%"
 )
-22б# ======================== PREMIUM DIZAYN (CSS) ========================
-st.markdown("""
+
+# ======================== PREMIUM DIZAYN (CSS) ========================
+st.markdown('''
 <style>
 
 .stApp {
-    background: #0a1628;
+    background: #0a1628;
 }
-    .block-container {
-    margin: 2rem 3rem;
-    max-width: 1400px;
-    background: rgba(255,255,255,0.03);
-    border-radius: 30px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.06);
-    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
+
+.block-container {
+    margin: 2rem 3rem;
+    max-width: 1400px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 25px 80px rgba(0,0,0,0.5);
 }
 
 h1 {
-    font-size: 3.5rem !important;
-    font-weight: 800 !important;
-    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 [data-testid="metric-container"] {
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,0.05),
-        rgba(255,255,255,0.01)
-    ) !important;
-    border-radius: 20px !important;
-    padding: 1.5rem !important;
-    border: 1px solid rgba(255,255,255,0.08) !important;
-    backdrop-filter: blur(20px) !important;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
-    transition: all 0.4s ease !important;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.05),
+        rgba(255,255,255,0.01)
+    ) !important;
+    border-radius: 20px !important;
+    padding: 1.5rem !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3) !important;
+    transition: all 0.4s ease !important;
 }
 
 [data-testid="metric-container"]:hover {
-    transform: translateY(-5px) !important;
-    border-color: rgba(255,215,0,0.3) !important;
+    transform: translateY(-5px) !important;
+    border-color: rgba(255,215,0,0.3) !important;
 }
 
 div[data-testid="metric-container"]:nth-child(2) .stMetricValue {
-    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    background: linear-gradient(135deg, #f7971e, #ffd200) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 div[data-testid="metric-container"]:nth-child(3) .stMetricValue {
-    background: linear-gradient(135deg, #00f260, #0575e6) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+    background: linear-gradient(135deg, #00f260, #0575e6) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
 }
 
 h2, h3 {
-    color: rgba(255,255,255,0.9) !important;
-    border-left: 4px solid #ffd700 !important;
-    padding-left: 1rem !important;
+    color: rgba(255,255,255,0.9) !important;
+    border-left: 4px solid #ffd700 !important;
+    padding-left: 1rem !important;
 }
 
 .stDataFrame thead th {
-    background: rgba(255,215,0,0.1) !important;
-    color: #ffd700 !important;
+    background: rgba(255,215,0,0.1) !important;
+    color: #ffd700 !important;
 }
 
 hr {
-    border: none !important;
-    height: 1px !important;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255,215,0,0.2),
-        transparent
-    ) !important;
+    border: none !important;
+    height: 1px !important;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,215,0,0.2),
+        transparent
+    ) !important;
 }
 
 .stAlert {
-    background: linear-gradient(
-        135deg,
-        rgba(255,215,0,0.05),
-        rgba(255,215,0,0.01)
-    ) !important;
-    border: 1px solid rgba(255,215,0,0.1) !important;
-    border-radius: 16px !important;
+    background: linear-gradient(
+        135deg,
+        rgba(255,215,0,0.05),
+        rgba(255,215,0,0.01)
+    ) !important;
+    border: 1px solid rgba(255,215,0,0.1) !important;
+    border-radius: 16px !important;
 }
 
 </style>
-""", unsafe_allow_html=True)
-
-
-# ======================== RASM (Hero) ========================
+''', unsafe_allow_html=True)# ======================== RASM (Hero) ========================
 try:
     image = Image.open('logo.jpg')
     st.image(image, use_container_width=True)
