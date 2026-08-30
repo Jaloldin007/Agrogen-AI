@@ -68,7 +68,7 @@ st.dataframe(df, use_container_width=True)
 st.info(f"""
 Xulosa:  
 - Jami hayvon: {JAMI_HAYVON} bosh  
-- Urg'ochilar: {URG_OCHI} ta ({round(URG_OCHI/JAMI_HAYVON*100)}%)  
+- Urg'ochilar: {URG_OCHI} ta ({round(URG_OCHI/JAMI_HAYVON*100)}%)
 - Kunlik jami sut: {JAMI_SUT} L  
 - Boshiga o'rtacha sut: {O_RTACHA_SUT} L  
 """)
