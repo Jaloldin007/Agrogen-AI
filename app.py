@@ -90,10 +90,10 @@ st.markdown("""
     .stApp {
         background: #0a1628;
     }
+</style>
+""", unsafe_allow_html=True)    
     .block-container {
         padding: 2rem 3rem;
-</style>
-""", unsafe_allow_html=True)
         max-width: 1400px;
         background: rgba(255,255,255,0.03);
         border-radius: 30px;
