@@ -81,54 +81,55 @@ with col2:
     st.write(f"Boshiga o'rtacha sut: {O_RTACHA_SUT} L")
 
 st.write(f"Urg'ochilar ulushi: {round(URG_OCHI/JAMI_HAYVON*100)}%")
+# ===========================================
+# CSS DIZAYN
+# ===========================================
 st.markdown("""
 <style>
-    /* Asosiy fon */
-    .main { 
-        background: linear-gradient(135deg, #0a1620, #142830); 
-    }
-    .block-container { 
-        padding-top: 1.5rem; 
-        max-width: 1350px; 
-    }
-    
-    /* Hero qismi */
-    .hero {
-        padding: 2.5rem 3rem;
-        border-radius: 24px;
-        background: linear-gradient(135deg, #0d2818, #1a4a2e);
-        margin-bottom: 2rem;
-        box-shadow: 0 15px 50px rgba(0,0,0,0.6);
-        border: 1px solid rgba(255,255,255,0.08);
-        position: relative;
-        overflow: hidden;
-    }
-    </style>
-    """, unsafe_allow_html=True) 
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -20%;
-        width: 400px;
-        height: 400px;
-        background: radial-gradient(circle, rgba(78,205,196,0.05), transparent);
-        border-radius: 50%;
-    }
-    .hero h1 {
-        margin: 0;
-        font-size: 3.2rem;
-        background: linear-gradient(90deg, #8cffc3, #4ecdc4, #8cffc3);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        animation: shimmer 3s ease-in-out infinite;
-    }
-    @keyframes shimmer {
-        0% { background-position: 0% center; }
-        100% { background-position: 200% center; }
-    }
-    .hero p { 
+.main {
+    background: linear-gradient(135deg, #0a1620, #142830);
+}
+.block-container {
+    padding-top: 1.5rem;
+    max-width: 1350px;
+}
+.hero {
+    padding: 2.5rem 3rem;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #0d2018, #1a4a2e);
+    margin-bottom: 2rem;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(78,205,196,0.05), transparent);
+    border-radius: 50%;
+}
+.hero h1 {
+    margin: 0;
+    font-size: 3.2rem;
+    background: linear-gradient(90deg, #8cffc3, #4ecdc4, #8cffc3);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s ease-in-out infinite;
+}
+@keyframes shimmer {
+    0% { background-position: 0% center; }
+    50% { background-position: 200% center; }
+    100% { background-position: 0% center; }
+}
+</style>
+""", unsafe_allow_html=True)
+.hero p { 
         color: #b8cfc3; 
         font-size: 1.2rem; 
         margin-top: 0.5rem; 
