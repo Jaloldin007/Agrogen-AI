@@ -164,7 +164,7 @@ st.markdown("""
     <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem;">
     st.markdown('<span class="badge">🚀 2026 AgriTech yetakchisi</span>', unsafe_allow_html=True)
     st.markdown('<span class="badge">🧠 AI asosida tahlil</span>', unsafe_allow_html=True)
-    st.markdown('<span class="badge">📊 100+ hayvon ma'lumotlari</span>', unsafe_allow_html=True)
+    st.markdown("<span class="badge">📊 100+ hayvon ma'lumotlari</span>", unsafe_allow_html=True)
     </div>
 </div>
 """, unsafe_allow_html=True)
