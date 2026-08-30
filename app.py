@@ -257,8 +257,7 @@ if page == "🏠 Dashboard":
     </p>
 </div>
 """, unsafe_allow_html=True)
-
-    # KPI kartalari
+ # KPI kartalari
     females = animals[animals["sex"] == "Urgʻochi"]
     avg_milk = females["milk"].mean() if not females.empty else 0
     avg_weight = animals["weight"].mean() if not animals.empty else 0
