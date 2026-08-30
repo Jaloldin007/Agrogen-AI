@@ -30,7 +30,7 @@ O_RTACHA_SUT = round(JAMI_SUT / URG_OCHI, 1)
 st.markdown("""
 <style>
     .stApp {
-        background: #0a1628;
+        background: #ffffff;
     }
     .block-container {
         padding: 2rem 3rem;
