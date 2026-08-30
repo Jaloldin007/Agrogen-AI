@@ -91,7 +91,7 @@ st.markdown("""
         background: #0a1628;
     }
     .block-container {
-        margin: 2rem 3rem;
+        pending: 2rem 3rem;
         max-width: 1400px;
         background: rgba(255,255,255,0.03);
         border-radius: 30px;
