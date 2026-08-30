@@ -140,7 +140,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-    hr {
+hr {
         border: none !important;
         height: 1px !important;
         background: linear-gradient(90deg, transparent, rgba(255,215,0,0.2), transparent) !important;
