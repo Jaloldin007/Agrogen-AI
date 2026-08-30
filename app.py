@@ -92,8 +92,6 @@ st.markdown("""
     }
     .block-container {
         padding: 2rem 3rem;
-</style>
-""", unsafe_allow_html=True)
         max-width: 1400px;
         background: rgba(255,255,255,0.03);
         border-radius: 30px;
@@ -140,6 +138,8 @@ st.markdown("""
         background: rgba(255,215,0,0.1) !important;
         color: #ffd700 !important;
     }
+</style>
+""", unsafe_allow_html=True)
 hr {
         border: none !important;
         height: 1px !important;
