@@ -159,7 +159,7 @@ except:
 
 st.markdown("""
 <div class="hero">
-    <h1>🐄 AgroGen AI Premium</h1>
+   st.markdown("<h1>🐄 AgroGen AI Premium</h1>", unsafe_allow_html=True)
     <p>Chorvachilikni raqamli boshqarish, mahsuldorlik monitoringi va naslchilik qarorlarini maʼlumotlar asosida qoʻllab-quvvatlaydigan <b>aqlli platforma</b>.</p>
     <div style="display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 0.8rem;">
         <span class="badge">🚀 2026 AgriTech yetakchisi</span>
